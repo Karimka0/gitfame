@@ -71,8 +71,7 @@ Joe Tsai     64    3       2
 Ross Light   2     1       1
 ferhat elmas 1     1       1
 ```
-Human-readable формат. Для паддинга используется пробел.
-см. [text/tabwriter](https://golang.org/pkg/text/tabwriter/).
+
 
 `csv`:
 ```
@@ -81,13 +80,11 @@ Joe Tsai,64,3,2
 Ross Light,2,1,1
 ferhat elmas,1,1,1
 ```
-[encoding/csv](https://golang.org/pkg/encoding/csv/)
 
 `json`:
 ```
 [{"name":"Joe Tsai","lines":64,"commits":3,"files":2},{"name":"Ross Light","lines":2,"commits":1,"files":1},{"name":"ferhat elmas","lines":1,"commits":1,"files":1}]
 ```
-[encoding/json](https://golang.org/pkg/encoding/json/)
 
 `json-lines`:
 ```
@@ -101,12 +98,8 @@ ferhat elmas,1,1,1
 **--languages** — список языков (программирования, разметки и др.), сужающий список файлов в расчёте; множество ограничений разделяется запятыми, например `'go,markdown'`
 
 Принадлежность файла к языку программирования определяется с помощью его расширения.
-В [configs/language_extensions.json](configs/language_extensions.json) лежит маппинг.
-Неизвестные языки никаких ограничений не накладывают. При их использовании можно написать warning в stderr.
 
-**--exclude** — набор [Glob](https://en.wikipedia.org/wiki/Glob_(programming)) паттернов, исключающих файлы из расчёта, например `'foo/*,bar/*'`
-
-Для работы с Glob'ом в стандартной библиотеке есть [path/filepath](https://golang.org/pkg/path/filepath/).
+**--exclude** — набор Glob паттернов, исключающих файлы из расчёта, например `'foo/*,bar/*'`
 
 **--restrict-to** — набор Glob паттернов, исключающий все файлы, не удовлетворяющие ни одному из паттернов набора
 
